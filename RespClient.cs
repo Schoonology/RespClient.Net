@@ -104,7 +104,7 @@ namespace RespClient
             RespReader reader = new RespReader(this.client.GetStream());
             RespSerializer serializer = new RespSerializer();
 
-            while (true)
+            while (this.client.Connected)
             {
                 try
                 {
@@ -115,6 +115,7 @@ namespace RespClient
                 }
                 catch (EndOfStreamException i)
                 {
+                    System.Environment.Exit(0);
                 }
                 catch (Exception e)
                 {
