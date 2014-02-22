@@ -17,7 +17,7 @@ namespace RespClient
         IPAddress host = IPAddress.Loopback;
         int port = 5984;
 
-        TcpClient client = new TcpClient();
+        RespClient client = new RespClient();
 
         public static RespClient FromArgs(string[] args)
         {
